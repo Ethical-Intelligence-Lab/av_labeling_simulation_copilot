@@ -1126,7 +1126,6 @@ const DrivingSimulator = () => {
             Blocks Hit: {simulationDataRef.current.whiteBlocksHit}
           </div>
           <div style={{ fontSize: '14px', marginTop: '10px', color: '#aaaaaa' }}>
-            (Data logged to browser console)
           </div>
         </div>
       )}
