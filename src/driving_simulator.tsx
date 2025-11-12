@@ -151,7 +151,7 @@ const DrivingSimulator = () => {
     const carGroup = new THREE.Group();
     const carBody = new THREE.Mesh(
       new THREE.BoxGeometry(2, 1, 4),
-      new THREE.MeshStandardMaterial({ color: 0x8a2be2, metalness: 0.6, roughness: 0.35 })
+      new THREE.MeshStandardMaterial({ color: 0xe48bff, metalness: 0.6, roughness: 0.35 })
     );
     carBody.position.y = 0.5;
     carBody.castShadow = true;
@@ -159,7 +159,7 @@ const DrivingSimulator = () => {
 
     const carTop = new THREE.Mesh(
       new THREE.BoxGeometry(1.6, 0.8, 2),
-      new THREE.MeshStandardMaterial({ color: 0xdab6ff, metalness: 0.5, roughness: 0.4 })
+      new THREE.MeshStandardMaterial({ color: 0xf2c6ff, metalness: 0.5, roughness: 0.4 })
     );
     carTop.position.set(0, 1.3, -0.3);
     carTop.castShadow = true;
@@ -754,6 +754,10 @@ const DrivingSimulator = () => {
           collisionCooldown.delete(index);
         }
         
+        if (finishLineCrossed) {
+          return;
+        }
+        
         // Collision detection with better tolerances
         const dx = Math.abs(car.position.x - carGroup.position.x);
         const dz = Math.abs(car.position.z - carGroup.position.z);
@@ -821,6 +825,7 @@ const DrivingSimulator = () => {
         finishLineCrossTime = Date.now();
         simulationDataRef.current.finalScore = scoreRef.current;
         setIsComplete(true);
+        clearInterval(timerInterval);
         
         // Remove all blocks immediately
         finalBlocks.forEach(block => {
@@ -899,11 +904,12 @@ const DrivingSimulator = () => {
           background: 'rgba(0, 0, 0, 0.95)',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
           alignItems: 'center',
           zIndex: 1000,
           color: 'white',
-          padding: '40px'
+          padding: '40px',
+          paddingTop: '80px'
         }}>
           <div style={{
             maxWidth: '600px',
@@ -1051,7 +1057,7 @@ const DrivingSimulator = () => {
       {!isComplete && (
         <div style={{
           position: 'absolute',
-          bottom: '160px',
+          bottom: '260px',
           left: '50%',
           transform: 'translateX(-50%)',
           display: 'flex',
