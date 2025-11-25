@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/av_labeling_simulation_copilot/static/css/main.e6c13ad2.css",
-    "main.js": "/av_labeling_simulation_copilot/static/js/main.bb9260f2.js",
+    "main.css": "/av_labeling_simulation_copilot/static/css/main.fdbcbbd2.css",
+    "main.js": "/av_labeling_simulation_copilot/static/js/main.c5408977.js",
     "index.html": "/av_labeling_simulation_copilot/index.html",
-    "main.e6c13ad2.css.map": "/av_labeling_simulation_copilot/static/css/main.e6c13ad2.css.map",
-    "main.bb9260f2.js.map": "/av_labeling_simulation_copilot/static/js/main.bb9260f2.js.map"
+    "main.fdbcbbd2.css.map": "/av_labeling_simulation_copilot/static/css/main.fdbcbbd2.css.map",
+    "main.c5408977.js.map": "/av_labeling_simulation_copilot/static/js/main.c5408977.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.bb9260f2.js"
+    "static/css/main.fdbcbbd2.css",
+    "static/js/main.c5408977.js"
   ]
 }
